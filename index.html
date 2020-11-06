@@ -4,33 +4,46 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="css/style.css">
-      <title>TÍNH DIỆN TÍCH VÀ CHU VI HÌNH TRÒN</title>
+      <title>CÔNG CỤ CHUYỂN ĐỔI TIỀN TỆ</title>
 </head>
 <body>
-      <table style="width: 500px">
-            <caption style="font-size: 1.5rem;"><strong>TÍNH DIỆN TÍCH VÀ CHU VI HÌNH TRÒN</strong></caption>
+      <table style="width: 700px">
+            <caption style="font-size: 1.5rem;"><strong>CÔNG CỤ CHUYỂN ĐỔI TIỀN TỆ</strong></caption>
             <thead>
                   <tr style="font-weight: bold; background-color: lightcoral;">
-                        <th>BÁN KÍNH</th>
-                        <th>CHU VI</th>
-                        <th>DIỆN TÍCH</th>
+                        <th>Amount</th>
+                        <th>From Currency</th>
+                        <th>Tỷ giá hiện tại</th>
+                        <th>To Currency</th>
+                        <th>Phím chức năng</th>
                   </tr>
             </thead>
             <tbody>
-                  <!-- <tr>
-                        <td><input type="number" name="scoreMath" id="scoreMath"></td>
-                        <td><input type="number" name="scorePhysics" id="scorePhysics"></td>
-                        <td><input type="number" name="scoreChemistry" id="scoreChemistry"></td>
-                        <td id="averageScore"></td>
-                  </tr> -->
                   <tr>
-                        <td><input type="text" name="radius" id="radius"></td>
-                        <td id="circuit"></td>
-                        <td id="area"></td>
+                        <td><input type="text" name="numberOfCurrency" id="numberOfCurrency"></td>
+                        <td>
+                              <select name="fromCurrency" id="fromCurrency">
+                                    <option value="vnd">VND</option>
+                                    <option value="usd">USD</option>
+                                    <option value="eur">EURO</option>
+                                    <option value="cny">CNY</option>
+                              </select>
+                        </td>
+                        <td id="rateChange">1</td>
+                        <td>
+                              <select name="toCurrency" id="toCurrency">
+                                    <option value="vnd">VND</option>
+                                    <option value="usd">USD</option>
+                                    <option value="eur">EURO</option>
+                                    <option value="cny">CNY</option>
+                              </select>
+                        </td>
+                        <td colspan="2"><button id="calculator">TÍNH TOÁN</button></td>
                   </tr>
             </tbody>
             <tfoot>
-                  <td colspan="3"><button id="calculator">TÍNH TOÁN</button></td>
+                  <td colspan="2" style="font-weight: bold;">SỐ TIỀN</td>
+                  <td colspan="3" id="amountChange" style="font-weight: bold;"></td>
             </tfoot>
       </table>
       

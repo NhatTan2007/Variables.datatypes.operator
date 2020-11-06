@@ -20,11 +20,90 @@
 // }
 
 document.getElementById("calculator").addEventListener("click",calculator);
-
 function calculator(){
-      let radius = parseFloat(document.getElementById("radius").value)
-      let circuit = parseFloat((radius*2*Math.PI).toFixed(1));
-      let area = parseFloat((radius**2*Math.PI).toFixed(1));
-      document.getElementById("circuit").innerHTML = circuit;
-      document.getElementById("area").innerHTML = area;
+      let numberOfCurrency = parseFloat(document.getElementById("numberOfCurrency").value);
+      let fromCurrency = document.getElementById("fromCurrency").value;
+      let toCurrency = document.getElementById("toCurrency").value;
+      let rateChange = document.getElementById("rateChange").textContent;
+      let amountChange = numberOfCurrency*rateChange;
+      document.getElementById("amountChange").innerHTML = amountChange;
+
 }
+      document.getElementById("fromCurrency").addEventListener("change",getRateChange);
+      document.getElementById("toCurrency").addEventListener("change",getRateChange);
+function getRateChange(){
+      let fromCurrency = document.getElementById("fromCurrency").value;
+      let toCurrency = document.getElementById("toCurrency").value;
+      //from VND
+      if (fromCurrency == "vnd") {
+            switch (toCurrency) {
+                  case "usd":
+                        document.getElementById("rateChange").innerHTML = 0.000043;
+                        break;
+                  case "eur":
+                        document.getElementById("rateChange").innerHTML = 0.000037;
+                        break;
+                  case "cny":
+                        document.getElementById("rateChange").innerHTML = 0.00029;
+                        break;
+                  case "vnd":
+                        document.getElementById("rateChange").innerHTML = 1;
+                        break;
+            }
+            
+      }
+      //from USD
+      if (fromCurrency == "usd") {
+            switch (toCurrency) {
+                  case "usd":
+                        document.getElementById("rateChange").innerHTML = 1;
+                        break;
+                  case "eur":
+                        document.getElementById("rateChange").innerHTML = 0.85;
+                        break;
+                  case "cny":
+                        document.getElementById("rateChange").innerHTML = 6.63;
+                        break;
+                  case "vnd":
+                        document.getElementById("rateChange").innerHTML = 23.176;
+                        break;
+            }
+            
+      }
+      //from EUR
+      if (fromCurrency == "eur") {
+            switch (toCurrency) {
+                  case "usd":
+                        document.getElementById("rateChange").innerHTML = 1.18;
+                        break;
+                  case "eur":
+                        document.getElementById("rateChange").innerHTML = 1;
+                        break;
+                  case "cny":
+                        document.getElementById("rateChange").innerHTML = 7.84;
+                        break;
+                  case "vnd":
+                        document.getElementById("rateChange").innerHTML = 27432;
+                        break;
+            }
+            
+      }
+      //from CNY
+      if (fromCurrency == "cny") {
+            switch (toCurrency) {
+                  case "usd":
+                        document.getElementById("rateChange").innerHTML = 0.15;
+                        break;
+                  case "eur":
+                        document.getElementById("rateChange").innerHTML = 0.13;
+                        break;
+                  case "cny":
+                        document.getElementById("rateChange").innerHTML = 1;
+                        break;
+                  case "vnd":
+                        document.getElementById("rateChange").innerHTML = 3497;
+                        break;
+            }
+            
+      }
+};
