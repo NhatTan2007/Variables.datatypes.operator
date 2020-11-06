@@ -19,10 +19,12 @@
 //       document.getElementById(id="averageScore").innerHTML = ((scoreMath + scorePhysics + scoreChemistry)/3).toFixed(1);
 // }
 
-document.getElementById("calculator").addEventListener("click",convertTemperature);
+document.getElementById("calculator").addEventListener("click",calculator);
 
-function convertTemperature(){
-      let celsius = parseFloat(document.getElementById("Celsius").value)
-      let fahrenheit = (celsius/5)*9+32;
-      document.getElementById("Fahrenheit").innerHTML = fahrenheit;
+function calculator(){
+      let radius = parseFloat(document.getElementById("radius").value)
+      let circuit = parseFloat((radius*2*Math.PI).toFixed(1));
+      let area = parseFloat((radius**2*Math.PI).toFixed(1));
+      document.getElementById("circuit").innerHTML = circuit;
+      document.getElementById("area").innerHTML = area;
 }
