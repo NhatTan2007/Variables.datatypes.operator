@@ -3,10 +3,41 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/style.css">
       <title>Document</title>
 </head>
 <body>
-      
+      <table>
+            <caption style="font-size: 2rem;"><strong>BẢNG ĐIỂM TRUNG BÌNH</strong></caption>
+            <thead>
+                  <tr style="font-weight: bold; background-color: lightcoral;">
+                        <th>TOÁN</td>
+                        <th>LÝ</td>
+                        <th>HÓA</td>
+                        <th>ĐIỂM TRUNG BÌNH</td>
+                  </tr>
+            </thead>
+            <tbody>
+                  <!-- <tr>
+                        <td><input type="number" name="scoreMath" id="scoreMath"></td>
+                        <td><input type="number" name="scorePhysics" id="scorePhysics"></td>
+                        <td><input type="number" name="scoreChemistry" id="scoreChemistry"></td>
+                        <td id="averageScore"></td>
+                  </tr> -->
+                  <tr>
+                        <td id="scoreMath"></td>
+                        <td id="scorePhysics"></td>
+                        <td id="scoreChemistry"></td>
+                        <td id="averageScore"></td>
+                  </tr>
+            </tbody>
+      </table>
+      <br>
+      <button id="calculator">Tính điểm trung bình</button>
+
+
+
+
       <script src="myscripts.js"></script>
 </body>
 </html>
