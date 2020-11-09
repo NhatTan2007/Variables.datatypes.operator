@@ -1,109 +1,69 @@
-// var scoreMath= document.getElementById(id="scoreMath").innerHTML = prompt("Nhập điểm Toán:");
-// while (parseFloat(scoreMath) > 10 || parseFloat(scoreMath) < 0) {
-//       scoreMath= document.getElementById(id="scoreMath").innerHTML = prompt("Nhập điểm Toán:")
-// }
-// var scorePhysics = document.getElementById(id="scorePhysics").innerHTML = prompt("Nhập điểm Lý:");
-// while (parseFloat(scorePhysics) > 10 || parseFloat(scorePhysics) < 0) {
-//       scorePhysics = document.getElementById(id="scorePhysics").innerHTML = prompt("Nhập điểm Lý:");
-// }
-// var scoreChemistry = document.getElementById(id="scoreChemistry").innerHTML = prompt("Nhập điểm Hóa:");
-// while (parseFloat(scoreChemistry) > 10 || parseFloat(scoreChemistry) < 0) {
-//       scoreChemistry = document.getElementById(id="scoreChemistry").innerHTML = prompt("Nhập điểm Hóa:");
-// }
-// scoreMath = parseFloat(parseFloat(scoreMath).toFixed(1));
-// scorePhysics = parseFloat(parseFloat(scorePhysics).toFixed(1));
-// scoreChemistry = parseFloat(parseFloat(scoreChemistry).toFixed(1));
-// document.getElementById("calculator").addEventListener("click",caculatorAverageScore);
+//add Number to input
+document.getElementById("period").addEventListener("click",function sendId(){getDataFromButton("period")});
+document.getElementById("0").addEventListener("click",function sendId(){getNumberFromButton("0")});
+document.getElementById("1").addEventListener("click",function sendId(){getNumberFromButton("1")});
+document.getElementById("2").addEventListener("click",function sendId(){getNumberFromButton("2")});
+document.getElementById("3").addEventListener("click",function sendId(){getNumberFromButton("3")});
+document.getElementById("4").addEventListener("click",function sendId(){getNumberFromButton("4")});
+document.getElementById("5").addEventListener("click",function sendId(){getNumberFromButton("5")});
+document.getElementById("6").addEventListener("click",function sendId(){getNumberFromButton("6")});
+document.getElementById("7").addEventListener("click",function sendId(){getNumberFromButton("7")});
+document.getElementById("8").addEventListener("click",function sendId(){getNumberFromButton("8")});
+document.getElementById("9").addEventListener("click",function sendId(){getNumberFromButton("9")});
 
-// function caculatorAverageScore(){
-//       document.getElementById(id="averageScore").innerHTML = ((scoreMath + scorePhysics + scoreChemistry)/3).toFixed(1);
-// }
+//add function to simple button
 
-document.getElementById("calculator").addEventListener("click",calculator);
-function calculator(){
-      let numberOfCurrency = parseFloat(document.getElementById("numberOfCurrency").value);
-      let fromCurrency = document.getElementById("fromCurrency").value;
-      let toCurrency = document.getElementById("toCurrency").value;
-      let rateChange = document.getElementById("rateChange").textContent;
-      let amountChange = numberOfCurrency*rateChange;
-      document.getElementById("amountChange").innerHTML = amountChange;
+document.getElementById("reset").addEventListener("click",resetInput);
+document.getElementById("divide").addEventListener("click",function sendId(){getDataFromButton("divide")});
+document.getElementById("multiply").addEventListener("click",function sendId(){getDataFromButton("multiply")});
+document.getElementById("subtract").addEventListener("click",function sendId(){getDataFromButton("subtract")});
+document.getElementById("plus").addEventListener("click",function sendId(){getDataFromButton("plus")});
+document.getElementById("openParenthesis").addEventListener("click",function sendId(){getDataFromButton("openParenthesis")});
+document.getElementById("closeParenthesis").addEventListener("click",function sendId(){getDataFromButton("closeParenthesis")});
+document.getElementById("percent").addEventListener("click",function sendId(){getDataFromButton("percent")});
+document.getElementById("equals").addEventListener("click",result);
 
-}
-      document.getElementById("fromCurrency").addEventListener("change",getRateChange);
-      document.getElementById("toCurrency").addEventListener("change",getRateChange);
-function getRateChange(){
-      let fromCurrency = document.getElementById("fromCurrency").value;
-      let toCurrency = document.getElementById("toCurrency").value;
-      //from VND
-      if (fromCurrency == "vnd") {
-            switch (toCurrency) {
-                  case "usd":
-                        document.getElementById("rateChange").innerHTML = 0.000043;
-                        break;
-                  case "eur":
-                        document.getElementById("rateChange").innerHTML = 0.000037;
-                        break;
-                  case "cny":
-                        document.getElementById("rateChange").innerHTML = 0.00029;
-                        break;
-                  case "vnd":
-                        document.getElementById("rateChange").innerHTML = 1;
-                        break;
-            }
-            
-      }
-      //from USD
-      if (fromCurrency == "usd") {
-            switch (toCurrency) {
-                  case "usd":
-                        document.getElementById("rateChange").innerHTML = 1;
-                        break;
-                  case "eur":
-                        document.getElementById("rateChange").innerHTML = 0.85;
-                        break;
-                  case "cny":
-                        document.getElementById("rateChange").innerHTML = 6.63;
-                        break;
-                  case "vnd":
-                        document.getElementById("rateChange").innerHTML = 23.176;
-                        break;
-            }
-            
-      }
-      //from EUR
-      if (fromCurrency == "eur") {
-            switch (toCurrency) {
-                  case "usd":
-                        document.getElementById("rateChange").innerHTML = 1.18;
-                        break;
-                  case "eur":
-                        document.getElementById("rateChange").innerHTML = 1;
-                        break;
-                  case "cny":
-                        document.getElementById("rateChange").innerHTML = 7.84;
-                        break;
-                  case "vnd":
-                        document.getElementById("rateChange").innerHTML = 27432;
-                        break;
-            }
-            
-      }
-      //from CNY
-      if (fromCurrency == "cny") {
-            switch (toCurrency) {
-                  case "usd":
-                        document.getElementById("rateChange").innerHTML = 0.15;
-                        break;
-                  case "eur":
-                        document.getElementById("rateChange").innerHTML = 0.13;
-                        break;
-                  case "cny":
-                        document.getElementById("rateChange").innerHTML = 1;
-                        break;
-                  case "vnd":
-                        document.getElementById("rateChange").innerHTML = 3497;
-                        break;
-            }
-            
-      }
+function getNumberFromButton(getId) {
+      let valueNumber = document.getElementById(getId).value;
+      document.getElementById("inputNumber").value = document.getElementById("inputNumber").value + valueNumber;
 };
+
+function getDataFromButton(getID){
+      let typeOfNumber = getID;
+      switch (typeOfNumber) {
+            case "period":
+                  document.getElementById("inputNumber").value = document.getElementById("inputNumber").value + ".";
+                  break;
+            case "divide":
+                        document.getElementById("inputNumber").value = document.getElementById("inputNumber").value + "/";
+                        break;
+            case "multiply":
+                  document.getElementById("inputNumber").value = document.getElementById("inputNumber").value + "*";
+            break;
+            case "subtract":
+                  document.getElementById("inputNumber").value = document.getElementById("inputNumber").value + "-";
+            break;
+            case "plus":
+                  document.getElementById("inputNumber").value = document.getElementById("inputNumber").value + "+";
+            break;
+            case "openParenthesis":
+                  document.getElementById("inputNumber").value = document.getElementById("inputNumber").value + "(";
+            break;
+            case "closeParenthesis":
+                  document.getElementById("inputNumber").value = document.getElementById("inputNumber").value + ")";
+            break;
+            case "percent":
+                  document.getElementById("inputNumber").value = document.getElementById("inputNumber").value + "%";
+            break;
+            default:
+                  break;
+      }
+}
+
+function resetInput(){
+      document.getElementById("inputNumber").value = "";
+};
+
+function result(){
+      document.getElementById("inputNumber").value = eval(document.getElementById("inputNumber").value);
+}

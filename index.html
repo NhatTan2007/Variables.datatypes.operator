@@ -4,53 +4,64 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="css/style.css">
-      <title>CÔNG CỤ CHUYỂN ĐỔI TIỀN TỆ</title>
+      <title>CALCULATOR</title>
 </head>
 <body>
-      <table style="width: 700px">
-            <caption style="font-size: 1.5rem;"><strong>CÔNG CỤ CHUYỂN ĐỔI TIỀN TỆ</strong></caption>
-            <thead>
-                  <tr style="font-weight: bold; background-color: lightcoral;">
-                        <th>Amount</th>
-                        <th>From Currency</th>
-                        <th>Tỷ giá hiện tại</th>
-                        <th>To Currency</th>
-                        <th>Phím chức năng</th>
-                  </tr>
-            </thead>
-            <tbody>
-                  <tr>
-                        <td><input type="text" name="numberOfCurrency" id="numberOfCurrency"></td>
-                        <td>
-                              <select name="fromCurrency" id="fromCurrency">
-                                    <option value="vnd">VND</option>
-                                    <option value="usd">USD</option>
-                                    <option value="eur">EURO</option>
-                                    <option value="cny">CNY</option>
-                              </select>
-                        </td>
-                        <td id="rateChange">1</td>
-                        <td>
-                              <select name="toCurrency" id="toCurrency">
-                                    <option value="vnd">VND</option>
-                                    <option value="usd">USD</option>
-                                    <option value="eur">EURO</option>
-                                    <option value="cny">CNY</option>
-                              </select>
-                        </td>
-                        <td colspan="2"><button id="calculator">TÍNH TOÁN</button></td>
-                  </tr>
-            </tbody>
-            <tfoot>
-                  <td colspan="2" style="font-weight: bold;">SỐ TIỀN</td>
-                  <td colspan="3" id="amountChange" style="font-weight: bold;"></td>
-            </tfoot>
-      </table>
-      
-
-
-
-
+      <div class="bodycalculator">
+            <table>
+                  <caption style="font-size: 1.5rem;"><strong>CALCULATOR</strong></caption>
+                  <thead>
+                        <th colspan="7"><input type="text" name="inputNumber" id="inputNumber" style="width:100%;padding: 10px 0;text-align: right;" readonly></th>
+                  </thead>
+                  <tbody>
+                        <tr>
+                              <td><button id="rad">Rad</button></td>
+                              <td><button id="deg">Deg</button></td>
+                              <td><button id="factorial">x!</button></td>
+                              <td><button id="openParenthesis">&#40;</button></td>
+                              <td><button id="closeParenthesis">&#41;</button></td>
+                              <td><button id="percent">&#37;</button></td>
+                              <td><button id="reset">AC</button></td>
+                        <tr>
+                              <td><button id="inverse">Inv</button></td>
+                              <td><button id="sin">Sin</button></td>
+                              <td><button id="naturalog">ln</button></td>
+                              <td><button id="7" value="7">7</button></td>
+                              <td><button id="8" value="8">8</button></td>
+                              <td><button id="9" value="9">9</button></td>
+                              <td><button id="divide">&#247;</button></td>
+                        </tr>
+                        <tr>
+                              <td><button id="pinumber">&#960;</button></td>
+                              <td><button id="cos">cos</button></td>
+                              <td><button id="logarithm">log</button></td>
+                              <td><button id="4" value="4">4</button></td>
+                              <td><button id="5" value="5">5</button></td>
+                              <td><button id="6" value="6">6</button></td>
+                              <td><button id="multiply">&#215;</button></td>
+                        </tr>
+                        <tr>
+                              <td><button id="euler">e</button></td>
+                              <td><button id="tan">tan</button></td>
+                              <td><button id="squareRoot">&#8730;</button></td>
+                              <td><button id="1" value="1">1</button></td>
+                              <td><button id="2" value="2">2</button></td>
+                              <td><button id="3" value="3">3</button></td>
+                              <td><button id="subtract">&#8722;</button></td>
+                        </tr>
+                        <tr>
+                              <td><button id="ans">Ans</button></td>
+                              <td><button id="tan">tan</button></td>
+                              <td><button id="xThePowerOfy">x<sup>y</sup></button></td>
+                              <td><button id="0" value="0">0</button></td>
+                              <td><button id="period">&#46;</button></td>
+                              <td><button id="equals">&#61;</button></td>
+                              <td><button id="plus">&#43;</button></td>
+                        </tr>
+                  </tbody>
+                  <tfoot></tfoot>
+            </table>
+      </div>
       <script src="myscripts.js"></script>
 </body>
 </html>
